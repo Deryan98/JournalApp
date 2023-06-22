@@ -30,8 +30,8 @@ export const RegisterPage = () => {
   } = useForm(formData, formValidations);
   const onSubmit = (event) => {
     event.preventDefault();
+    setFormSubmitted(true);
     if(!isFormValid) return
-    // setFormSubmitted(true);
     dispatch(startCreatingUserWithEmailPassword(formState));
   }
 
